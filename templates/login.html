@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Log in
+{% endblock %}
+
+{% block heading %}
+    <strong>KickItLikeShika</strong>
+{% endblock %}
+
+{% block body %}
+<div class="dropdown-divider"></div>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <h3 class="text-center text-danger">{{ message }}</h3>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action ="{{ url_for('login') }}" method="post" style="margin-top:10%">
+        <h1 style="display:block;">Log in</h1>
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Enter your username" style="display:block; margin-bottom:1%; width:30%; margin-left:35%" >
+            <input type="password" name="password" placeholder="Enter your password" style="display:block; width:30%; margin-left:35%">
+            <button class="btn btn-primary" style="margin-top:1%">Log in</button>
+        </div>
+    </form>
+    <nav>
+        <div>Don't have an account?</div>
+        <ul style="text-decoration:none; list-style:none;">
+            <li style="margin-top:1%; margin-right:4%"><a href="register"><strong>Register</strong></a></li>
+        </ul>
+    </nav>
+{% endblock %}

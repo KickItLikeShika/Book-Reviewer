@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    HOME
+{% endblock %}
+
+{% block heading %}
+    <strong>KickItLikeShika</strong>
+{% endblock %}
+
+{% block body %}
+<div class="dropdown-divider"></div>
+
+    <form action ="{{ url_for('search') }}" method="post" style="margin-top:10%">
+        <h1 style="display:block;">Search for Books</h1>
+        <div class="form-group">
+            <input type="search" name="search" placeholder="Search.." style="display:block; margin-bottom:1%; width:30%; margin-left:35%" >
+            <button class="btn btn-primary" style="margin-top:1%">Search</button>
+        </div>
+    </form>
+    <form action="{{ url_for('logout') }}">
+        <button name="logoutbut" style="margin-top:1%" class="btn btn-primary">Log out</button>
+    </form>
+{% endblock %}
